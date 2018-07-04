@@ -43,7 +43,6 @@
 </template>
 
 <script>
-
 import Cookie from 'js-cookie'
 
 export default {
@@ -59,7 +58,7 @@ export default {
         this.$store.commit('update', auth) // mutating to store for client rendering
         Cookie.set('auth', auth) // saving token in cookie for server rendering
         this.$router.push('/')
-      }, 500)
+      }, 200)
     }
   }
 }

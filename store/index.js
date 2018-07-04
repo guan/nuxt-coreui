@@ -15,13 +15,12 @@ const createStore = () => {
     },
     actions: {
       nuxtServerInit ({ commit }, { req }) {
-        // let accessToken = null
-        if (Cookie.get('auth') && state.auth === null) {
-          let accessToken = Cookie.get('auth');
-          // var parsed = cookieparser.parse(req.headers.cookie)
-          // accessToken = JSON.parse(parsed.auth || null)
-          commit('update', accessToken);
+        let accessToken = null
+        if (req.headers.cookie) {
+          var parsed = cookieparser.parse(req.headers.cookie)
+          accessToken = JSON.parse(parsed.auth)
         }
+        commit('update', accessToken)
       },
       logout ({ commit }) {
         Cookie.remove('auth')
