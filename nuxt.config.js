@@ -34,7 +34,6 @@ module.exports = {
     /* Import Core SCSS */
     { src: '~/assets/scss/style.scss', lang: 'scss' }
   ],
-
   /*
   ** Import Plugin 
    */

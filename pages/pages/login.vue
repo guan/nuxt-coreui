@@ -10,15 +10,15 @@
                 <p class="text-muted">Sign In to your account</p>
                 <b-input-group class="mb-3">
                   <b-input-group-prepend><b-input-group-text><i class="icon-user"></i></b-input-group-text></b-input-group-prepend>
-                  <input type="text" class="form-control" placeholder="Username">
+                  <input name="username" type="text" class="form-control" placeholder="Username">
                 </b-input-group>
                 <b-input-group class="mb-4">
                   <b-input-group-prepend><b-input-group-text><i class="icon-lock"></i></b-input-group-text></b-input-group-prepend>
-                  <input type="password" class="form-control" placeholder="Password">
+                  <input name="password" type="password" class="form-control" placeholder="Password">
                 </b-input-group>
                 <b-row>
                   <b-col cols="6">
-                    <b-button variant="primary" class="px-4">Login</b-button>
+                    <b-button variant="primary" class="px-4" @click="postLogin">Login</b-button>
                   </b-col>
                   <b-col cols="6" class="text-right">
                     <b-button variant="link" class="px-0">Forgot password?</b-button>
@@ -59,7 +59,7 @@ export default {
         this.$store.commit('update', auth) // mutating to store for client rendering
         Cookie.set('auth', auth) // saving token in cookie for server rendering
         this.$router.push('/')
-      }, 1000)
+      }, 500)
     }
   }
 }
