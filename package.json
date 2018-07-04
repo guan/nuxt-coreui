@@ -13,10 +13,14 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "ajv": "^6.5.2",
     "bootstrap-vue": "^2.0.0-rc.1",
     "chart.js": "^2.7.1",
+    "cookieparser": "^0.1.0",
     "flag-icon-css": "^2.9.0",
     "font-awesome": "^4.7.0",
+    "jquery": "^1.9.1",
+    "js-cookie": "^2.2.0",
     "node-sass": "^4.7.2",
     "nuxt": "^1.0.0",
     "sass-loader": "^6.0.6",

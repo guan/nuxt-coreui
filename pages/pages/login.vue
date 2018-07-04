@@ -43,8 +43,24 @@
 </template>
 
 <script>
+
+import Cookie from 'js-cookie'
+
 export default {
   name: 'Login',
-  layout: 'clean'
+  layout: 'clean',
+  middleware: 'notAuthenticated',
+  methods: {
+    postLogin () {
+      setTimeout(() => {
+        const auth = {
+          accessToken: 'someStringGotFromApiServiceWithAjax'
+        }
+        this.$store.commit('update', auth) // mutating to store for client rendering
+        Cookie.set('auth', auth) // saving token in cookie for server rendering
+        this.$router.push('/')
+      }, 1000)
+    }
+  }
 }
 </script>
