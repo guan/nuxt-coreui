@@ -10,3 +10,6 @@ yarn.lock
 
 # Nuxt build
 .nuxt
+
+# Dist build
+dist
